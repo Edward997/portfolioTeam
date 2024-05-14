@@ -4,6 +4,8 @@ import Banner from '../components/banner';
 import Footer from '../components/footer';
 import { FaGithub, FaYoutube } from "react-icons/fa"
 import Skills from './skills';
+import Contact from './contact';
+
 
 import societyEvents from '../assets/images/webProjects/societyEvents.png';
 import guionInstruccional from '../assets/images/webProjects/guion_Instruccional.png'; // Ajusta la ruta según la estructura de tu proyecto
@@ -101,6 +103,7 @@ const HomePage: React.FC = () => {
                 </Container>
             </Box>
             <Skills />
+            <Contact />
             <Footer />
         </ChakraProvider>
 

@@ -3,13 +3,15 @@ import { ChakraProvider } from '@chakra-ui/react';
 import homePage from './pages/homePage';
 
 
-export const App = () =>(
-
+function App() {
+  return (
     <ChakraProvider>
       <Routes>
         <Route path="/" Component={homePage} />
         <Route path="/" element={<Navigate replace to="/" />} />
       </Routes>
     </ChakraProvider>
+);
+}
 
-)
+export default App;

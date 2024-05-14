@@ -1,5 +1,5 @@
 import { Flex, Heading, Text, Link } from "@chakra-ui/react";
-
+import Navbar from "./navbar";
 
 interface BannerProps { }
 
@@ -22,6 +22,7 @@ const Banner: React.FC<BannerProps> = () => {
     >
 
       <Flex direction="column" alignItems="center">
+        <Navbar />
         <Heading as="h1" fontSize={["3xl", "4xl", "5xl"]}>
           IntelliEdge Solutions
         </Heading>

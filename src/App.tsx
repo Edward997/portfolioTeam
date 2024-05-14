@@ -8,7 +8,7 @@ function App() {
     <ChakraProvider>
       <Routes>
         <Route path="/" Component={homePage} />
-        <Route path="/" element={<Navigate replace to="/" />} />
+        <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
     </ChakraProvider>
 );

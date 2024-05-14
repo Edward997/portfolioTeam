@@ -1,7 +1,7 @@
 {
   "name": "portfolio-team",
   "version": "0.1.0",
-  "homepage": "https://edward997.github.io/Portafolio-DSC",
+  "homepage": "https://edward997.github.io/portfolioTeam",
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",

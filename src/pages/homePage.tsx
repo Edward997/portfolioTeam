@@ -92,7 +92,7 @@ const HomePage: React.FC = () => {
                     </SimpleGrid>
                     {/* Botón para ver todos los proyectos */}
                     <Box mt={8} textAlign="center">
-                        <Link href="/featuredProjects">
+                        <Link href="/portfolioTeam/featuredProjects">
                             <Button variant="outline" colorScheme="gray" size="lg">
                                 View All
                             </Button>

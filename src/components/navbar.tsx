@@ -9,25 +9,26 @@ const Navbar = () => {
       color="white"
       alignItems="center"
       justifyContent="space-between"
-      width="100%"
+      width="100vw"
       position="fixed"
       top={0}
       zIndex={999} // Ajusta el valor según sea necesario
+      bg="#586F7C"
     >
       
       <Flex>
-        <Box p="2">
-          <Link href="#">Home</Link>
+        <Box p="2" >
+          <Link href="#" fontWeight="bold">Home</Link>
         </Box>
         <Spacer />
         <Box p="2">
-          <Link href="#">About Us</Link>
+          <Link href="#" fontWeight="bold">About Us</Link>
         </Box>
         <Box p="2">
-          <Link href="#">Services</Link>
+          <Link href="#" fontWeight="bold">Services</Link>
         </Box>
         <Box p="2">
-          <Link href="#">Contact</Link>
+          <Link href="#" fontWeight="bold">Contact</Link>
         </Box>
       </Flex>
     

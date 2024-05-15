@@ -42,8 +42,9 @@ const HomePage: React.FC = () => {
 
     return (
         <ChakraProvider>
-            <Banner />
-            <Box bg="#F1FAEE">
+
+            <Box bg="#F1FAEE" >
+                <Banner />
                 <Container maxW="container.xl" py={12}>
                     <Box textAlign="center" mb={12}>
                         <Heading as="h2" mb={4} fontSize="3xl" fontWeight="bold">
@@ -101,10 +102,11 @@ const HomePage: React.FC = () => {
                         </Link>
                     </Box>
                 </Container>
+                <Skills />
+                <Contact />
+                <Footer />
             </Box>
-            <Skills />
-            <Contact />
-            <Footer />
+
         </ChakraProvider>
 
     );

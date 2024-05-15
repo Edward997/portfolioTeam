@@ -1,16 +1,17 @@
-import { Flex, Heading, Text, Link } from "@chakra-ui/react";
+import { Flex, Heading, Text, Link, Box } from "@chakra-ui/react";
 import Navbar from "./navbar";
 
 interface BannerProps { }
 
 const Banner: React.FC<BannerProps> = () => {
   return (
+
     <Flex
       backgroundImage="url('https://cdn.pixabay.com/photo/2016/11/30/20/58/programming-1873854_1280.png')"
       backgroundSize="cover"
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
-      height={['200px', '300px', '400px']} // Ajusta la altura para diferentes tamaños de pantalla
+      height={['300px', '330px', '400px']} // Ajusta la altura para diferentes tamaños de pantalla
       display="flex"
       alignItems="center"
       justifyContent="center"
@@ -18,11 +19,19 @@ const Banner: React.FC<BannerProps> = () => {
       textAlign="center"
       position="relative" // Agregamos posición relativa al contenedor para posicionar el texto
       padding={['20px', '40px', '60px']} // Ajusta el espacio interior para diferentes tamaños de pantalla
-
+      flexDirection="column"
     >
-
-      <Flex direction="column" alignItems="center">
+      <Flex
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+        mb={4}
+      >
         <Navbar />
+      </Flex>
+      <Flex direction="column" alignItems="center" marginTop="40px">
+        
+
         <Heading as="h1" fontSize={["3xl", "4xl", "5xl"]}>
           IntelliEdge Solutions
         </Heading>

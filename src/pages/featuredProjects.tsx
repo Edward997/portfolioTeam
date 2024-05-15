@@ -17,6 +17,7 @@ import musicPlayer from '../assets/images/schoolProjects/musicPlayer.png';
 import pathFinder from '../assets/images/personalProjects/pathFinderVisualizer.png';
 import sortVisualizer from '../assets/images/personalProjects/sortVisualizer.png';
 import uxuiDesign from '../assets/images/uxUiDesign/uxuiDesing.png';
+import Footer from '../components/footer';
 
 
 
@@ -462,6 +463,7 @@ const FeaturedProjects = () => {
           </Modal>
         </Container>
       </Box>
+      <Footer />
     </ChakraProvider>
   );
 };

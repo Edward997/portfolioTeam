@@ -45,65 +45,73 @@ const HomePage: React.FC = () => {
 
             <Box bg="#F1FAEE" >
                 <Banner />
-                <Container maxW="container.xl" py={12}>
-                    <Box textAlign="center" mb={12}>
-                        <Heading as="h2" mb={4} fontSize="3xl" fontWeight="bold">
-                            Featured Projects
-                        </Heading>
-                        <Text className="mx-auto max-w-[700px]" color="gray.500" fontSize={['xl', 'lg', 'xl']} textStyle={['relaxed', 'base', 'relaxed']} colorScheme="gray">
-                            Check out some of my recent work.
-                        </Text>
-                    </Box>
-                    <SimpleGrid columns={[1, 2, 3]} gap={6}>
-                        {/* Renderizar los tres proyectos */}
-                        {projects.map((project) => (
-                            <Box key={project.id} borderWidth="1px" borderRadius="lg" bg="white" overflow="hidden">
-                                <img
-                                    alt={project.title}
-                                    src={project.image}
-                                    className="mx-auto aspect-video overflow-hidden rounded-t-xl object-cover object-center"
-                                    height="310"
-                                    width="550"
-                                />
-                                <Box p={6}>
-                                    <Heading as="h3" size="md" mb={2}>
-                                        {project.title}
-                                    </Heading>
-                                    <Text color="gray.500" colorScheme="gray">{project.description}</Text>
+                <Box id="featuredProjects">
+                    <Container maxW="container.xl" py={12}>
+                        <Box textAlign="center" mb={12}>
+                            <Heading as="h2" mb={4} fontSize="3xl" fontWeight="bold">
+                                Featured Projects
+                            </Heading>
+                            <Text className="mx-auto max-w-[700px]" color="gray.500" fontSize={['xl', 'lg', 'xl']} textStyle={['relaxed', 'base', 'relaxed']} colorScheme="gray">
+                                Check out some of my recent work.
+                            </Text>
+                        </Box>
+                        <SimpleGrid columns={[1, 2, 3]} gap={6}>
+                            {/* Renderizar los tres proyectos */}
+                            {projects.map((project) => (
+                                <Box key={project.id} borderWidth="1px" borderRadius="lg" bg="white" overflow="hidden">
+                                    <img
+                                        alt={project.title}
+                                        src={project.image}
+                                        className="mx-auto aspect-video overflow-hidden rounded-t-xl object-cover object-center"
+                                        height="310"
+                                        width="550"
+                                    />
+                                    <Box p={6}>
+                                        <Heading as="h3" size="md" mb={2}>
+                                            {project.title}
+                                        </Heading>
+                                        <Text color="gray.500" colorScheme="gray">{project.description}</Text>
+                                    </Box>
+                                    <Box px={6} py={4} display="flex" justifyContent="center" alignItems="center" gap={2}>
+                                        {project.youtubeLink && (
+                                            <Link href={project.youtubeLink} target="_blank" rel="noopener noreferrer">
+                                                <IconButton aria-label={''} icon={<FaYoutube />} colorScheme='red'>
+                                                </IconButton>
+                                            </Link>
+                                        )}
+                                        {project.githubLink && (
+                                            <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                                                <IconButton aria-label={''} icon={<FaGithub />} colorScheme='gray'>
+                                                </IconButton>
+                                            </Link>
+                                        )}
+                                        {project.githubPagesLink && (
+                                            <Link href={project.githubPagesLink} target="_blank" rel="noopener noreferrer">
+                                                <Button colorScheme="teal" size="sm" mr={2}>GitHub Pages</Button>
+                                            </Link>
+                                        )}
+                                    </Box>
                                 </Box>
-                                <Box px={6} py={4} display="flex" justifyContent="center" alignItems="center" gap={2}>
-                                    {project.youtubeLink && (
-                                        <Link href={project.youtubeLink} target="_blank" rel="noopener noreferrer">
-                                            <IconButton aria-label={''} icon={<FaYoutube />} colorScheme='red'>
-                                            </IconButton>
-                                        </Link>
-                                    )}
-                                    {project.githubLink && (
-                                        <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                                            <IconButton aria-label={''} icon={<FaGithub />} colorScheme='gray'>
-                                            </IconButton>
-                                        </Link>
-                                    )}
-                                    {project.githubPagesLink && (
-                                        <Link href={project.githubPagesLink} target="_blank" rel="noopener noreferrer">
-                                            <Button colorScheme="teal" size="sm" mr={2}>GitHub Pages</Button>
-                                        </Link>
-                                    )}
-                                </Box>
-                            </Box>
-                        ))}
-                    </SimpleGrid>
-                    {/* Botón para ver todos los proyectos */}
-                    <Box mt={8} textAlign="center">
-                        <Link href="/portfolioTeam/featuredProjects">
-                            <Button variant="outline" colorScheme="gray" size="lg">
-                                View All
-                            </Button>
-                        </Link>
-                    </Box>
-                </Container>
-                <Skills />
-                <Contact />
+                            ))}
+                        </SimpleGrid>
+                        {/* Botón para ver todos los proyectos */}
+                        <Box mt={8} textAlign="center">
+                            <Link href="/portfolioTeam/featuredProjects">
+                                <Button variant="outline" colorScheme="gray" size="lg">
+                                    View All
+                                </Button>
+                            </Link>
+                        </Box>
+                    </Container>
+                </Box>
+                <Box id="skills">
+                    <Skills />
+                </Box>
+
+                <Box id="contact">
+                    <Contact />
+                </Box>
+
                 <Footer />
             </Box>
 

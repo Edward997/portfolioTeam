@@ -13,7 +13,7 @@ const Navbar = () => {
       position="fixed"
       top={0}
       zIndex={999} // Ajusta el valor según sea necesario
-      bg="#586F7C"
+      bg="#37D39F"
     >
       
       <Flex>
@@ -22,13 +22,13 @@ const Navbar = () => {
         </Box>
         <Spacer />
         <Box p="2">
-          <Link href="#" fontWeight="bold">About Us</Link>
+          <Link href="#featuredProjects" fontWeight="bold">Projects</Link>
         </Box>
         <Box p="2">
-          <Link href="#" fontWeight="bold">Services</Link>
+          <Link href="#skills" fontWeight="bold">Skills</Link>
         </Box>
         <Box p="2">
-          <Link href="#" fontWeight="bold">Contact</Link>
+          <Link href="#contact" fontWeight="bold">Contact</Link>
         </Box>
       </Flex>
     

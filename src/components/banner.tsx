@@ -40,7 +40,7 @@ const Banner: React.FC<BannerProps> = () => {
         </Text>
         <Flex gap={4}>
           <Link
-            href="#"
+            href="/portfolioTeam/featuredProjects"
             fontSize="sm"
             fontWeight="medium"
             bg="#1D3557"
@@ -53,7 +53,7 @@ const Banner: React.FC<BannerProps> = () => {
             View Projects
           </Link>
           <Link
-            href="#"
+            href="#contact"
             fontSize="md"
             fontWeight="medium"
             border="1px"

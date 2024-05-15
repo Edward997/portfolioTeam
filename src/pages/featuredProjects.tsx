@@ -49,7 +49,15 @@ const projects: ProjectCategory[] = [
       {
         id: 1,
         title: "Society Events",
-        description: "This project is a platform that allows the creation of social events which encourage the participation of the community to solve problems that afflict society without a profit motive.",
+        description:
+          <p>
+            This project is a platform that allows the creation of social events
+            that encourage community participation to solve problems that afflict
+            the society without profit, being a web application divided into frontend
+            with <b style={{ color: "green" }}>Chakra UI</b> and backend with <b style={{ color: "green" }}>Django </b>
+            using languages such as <b style={{ color: "green" }}>Typescript</b>, <b style={{ color: "green" }}>Python</b>, etc.
+          </p>
+        ,
         image: societyEvents,
         youtubeLink: "",
         githubLink: "https://github.com/TheIcySpark/Society-events",
@@ -58,7 +66,14 @@ const projects: ProjectCategory[] = [
       {
         id: 2,
         title: "Instructional Script",
-        description: "Website development for didactic instructional script with html,css and pure javascript (vanilla) designed responsive.",
+        description:
+          <p>
+            Website development for instructional script activity based on didactic
+            platform <b style={{ color: "green" }}>HTML</b>, <b style={{ color: "green" }}>CSS </b>
+            and pure <b style={{ color: "green" }}>JavaScript</b> (vanilla) responsively designed for
+            adaptation to different devices.
+          </p>
+        ,
         image: guionInstruccional,
         youtubeLink: "",
         githubLink: "https://github.com/TheIcySpark/Guion-instruccional",
@@ -99,10 +114,10 @@ const projects: ProjectCategory[] = [
         title: "PDF Report Generator",
         description:
           <p>
-            Desktop application, made with{' '}
-            <b style={{ color: "green" }}>Java</b>. An application was needed to generate a report in PDF format running on Windows.
-            This was to avoid using a Word document where formatting mistakes could occur.
-            The application includes fields to complete and a button to generate the corresponding PDF file.
+            Desktop application to <b style={{ color: "green" }}>generate reports</b> in pdf or excel,
+            process automation, made with <b style={{ color: "green" }}>Java</b> and <b style={{ color: "green" }}>data import</b> of text
+            files or spreadsheets for extraction and processing of data, information, to visualize graphically
+            with <b style={{ color: "green" }}>interfaces design</b> and|or data export.
           </p>
         ,
         image: pdfGenerator,
@@ -113,7 +128,12 @@ const projects: ProjectCategory[] = [
       {
         id: 5,
         title: "Accounting Project",
-        description: "Accounting software implementation of a pdf report generator for the treatment of information from excel files for income and expense balance."
+        description:
+          <p>
+            Implementation of excel <b style={{ color: "green" }}>report generator</b> in accounting
+            software and for the processing of information imported from <b style={{ color: "green" }}>excel files </b>
+            for the balance of income and expenses, developed in <b style={{ color: "green" }}>Apache NetBeans</b> and <b style={{ color: "green" }}>Java</b>.
+          </p>
         ,
         image: acountingProject,
         youtubeLink: "",
@@ -248,7 +268,14 @@ const projects: ProjectCategory[] = [
       {
         id: 12,
         title: "Digital Document Center",
-        description: "",
+        description:
+          <p>
+            This is a mockup project where the interaction <b style={{ color: "green" }}>design</b> between the platform 
+            and the user is made for a <b style={{ color: "green" }}>module</b> that was integrated into a company's system. 
+            This module consists in the design of views for an internal <b style={{ color: "green" }}>file manager </b> 
+            "Digital Document Center" designed in <b style={{ color: "green" }}>Figma</b>.
+          </p>
+        ,
         image: uxuiDesign,
         youtubeLink: "",
         githubLink: "",
@@ -278,7 +305,7 @@ const FeaturedProjects = () => {
     setCurrentImages(images);
     onOpen(); // Abre el modal cuando se llama a esta función
   };
-  
+
   const handleCloseModal = () => {
     setCurrentImages([]);
     onClose(); // Cierra el modal cuando se llama a esta función
@@ -422,7 +449,7 @@ const FeaturedProjects = () => {
           <Modal isOpen={isOpen} onClose={handleCloseModal} size="xl">
             <ModalOverlay />
             <ModalContent>
-              <ModalHeader>Image Carousel</ModalHeader>
+              <ModalHeader textAlign="center">Image Gallery</ModalHeader>
               <ModalBody>
                 <Box position="relative" width="full" overflow="hidden">
                   <img

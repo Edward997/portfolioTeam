@@ -11,14 +11,31 @@ import societyEvents from '../assets/images/webProjects/societyEvents.png';
 import guionInstruccional from '../assets/images/webProjects/guion_Instruccional.png'; // Ajusta la ruta según la estructura de tu proyecto
 import pdfGenerator from '../assets/images/desktopProjects/pdf_Generator.jpeg';
 
+export interface Project {
+    id: number;
+    title: string;
+    description: string | JSX.Element | any;
+    image: string;
+    youtubeLink: string;
+    githubLink: string;
+    githubPagesLink: string;
+}
 
 const HomePage: React.FC = () => {
     // Array de proyectos para mostrar en la página de inicio
-    const projects = [
+    const projects: Project[] = [
         {
             id: 1,
             title: "Society Events",
-            description: "This project is a platform that allows the creation of social events which encourage the participation of the community to solve problems that afflict society without a profit motive.",
+            description:
+                <p>
+                    This project is a platform that allows the creation of social events
+                    that encourage community participation to solve problems that afflict
+                    the society without profit, being a web application divided into frontend
+                    with <b style={{ color: "green" }}>Chakra UI</b> and backend with <b style={{ color: "green" }}>Django </b>
+                    using languages such as <b style={{ color: "green" }}>Typescript</b>, <b style={{ color: "green" }}>Python</b>, etc.
+                </p>
+            ,
             image: societyEvents,
             youtubeLink: "",
             githubLink: "https://github.com/TheIcySpark/Society-events",
@@ -27,16 +44,34 @@ const HomePage: React.FC = () => {
         {
             id: 2,
             title: "Instructional Script",
-            description: "Website development for didactic instructional script with html,css and pure javascript (vanilla) designed responsive.",
+            description: 
+            <p>
+                Website development for instructional script activity based on didactic 
+                platform <b style={{ color: "green" }}>HTML</b>, <b style={{ color: "green" }}>CSS </b> 
+                and pure <b style={{ color: "green" }}>JavaScript</b> (vanilla) responsively designed for 
+                adaptation to different devices.
+            </p>
+            ,
             image: guionInstruccional,
+            youtubeLink: "",
             githubLink: "https://github.com/TheIcySpark/Guion-instruccional",
             githubPagesLink: "https://theicyspark.github.io/Guion-instruccional/instructionalScript/units/index.html"
         },
         {
             id: 3,
             title: "PDF Report Generator",
-            description: "Desktop application to generate pdf or excel reports, process automation, made with JAVA and data management of text files or spreadsheets for data extraction and processing, information.",
+            description: 
+            <p>
+                Desktop application to <b style={{ color: "green" }}>generate reports</b> in pdf or excel, 
+                process automation, made with <b style={{ color: "green" }}>Java</b> and <b style={{ color: "green" }}>data import</b> of text 
+                files or spreadsheets for extraction and processing of data, information, to visualize graphically 
+                with <b style={{ color: "green" }}>interfaces design</b> and|or data export.
+            </p>
+            ,
             image: pdfGenerator,
+            youtubeLink: "",
+            githubLink: "https://github.com/TheIcySpark/Guion-instruccional",
+            githubPagesLink: ""
         },
     ];
 
@@ -70,26 +105,33 @@ const HomePage: React.FC = () => {
                                         <Heading as="h3" size="md" mb={2}>
                                             {project.title}
                                         </Heading>
-                                        <Text color="gray.500" colorScheme="gray">{project.description}</Text>
-                                    </Box>
-                                    <Box px={6} py={4} display="flex" justifyContent="center" alignItems="center" gap={2}>
-                                        {project.youtubeLink && (
-                                            <Link href={project.youtubeLink} target="_blank" rel="noopener noreferrer">
-                                                <IconButton aria-label={''} icon={<FaYoutube />} colorScheme='red'>
-                                                </IconButton>
-                                            </Link>
-                                        )}
-                                        {project.githubLink && (
-                                            <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                                                <IconButton aria-label={''} icon={<FaGithub />} colorScheme='gray'>
-                                                </IconButton>
-                                            </Link>
-                                        )}
-                                        {project.githubPagesLink && (
-                                            <Link href={project.githubPagesLink} target="_blank" rel="noopener noreferrer">
-                                                <Button colorScheme="teal" size="sm" mr={2}>GitHub Pages</Button>
-                                            </Link>
-                                        )}
+                                        <Box color="gray.500">
+                                            {typeof project.description === "string" ? (
+                                                project.description
+                                            ) : (
+                                                project.description
+                                            )}
+                                        </Box>
+
+                                        <Box px={6} py={4} display="flex" justifyContent="center" alignItems="center" gap={2}>
+                                            {project.youtubeLink && (
+                                                <Link href={project.youtubeLink} target="_blank" rel="noopener noreferrer">
+                                                    <IconButton aria-label={''} icon={<FaYoutube />} colorScheme='red'>
+                                                    </IconButton>
+                                                </Link>
+                                            )}
+                                            {project.githubLink && (
+                                                <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                                                    <IconButton aria-label={''} icon={<FaGithub />} colorScheme='gray'>
+                                                    </IconButton>
+                                                </Link>
+                                            )}
+                                            {project.githubPagesLink && (
+                                                <Link href={project.githubPagesLink} target="_blank" rel="noopener noreferrer">
+                                                    <Button colorScheme="teal" size="sm" mr={2}>GitHub Pages</Button>
+                                                </Link>
+                                            )}
+                                        </Box>
                                     </Box>
                                 </Box>
                             ))}

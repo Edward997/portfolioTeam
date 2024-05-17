@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import { Box, Container, Flex, Heading, Text, Input, Textarea, Button, AlertDialog, AlertDialogOverlay, AlertDialogContent, AlertDialogHeader, AlertDialogBody, AlertDialogFooter } from '@chakra-ui/react';
+import { Box, Container, Flex, Heading, Text, Input, Textarea, Button, AlertDialog, AlertDialogOverlay, AlertDialogContent, AlertDialogHeader, AlertDialogBody, AlertDialogFooter, useColorModeValue } from '@chakra-ui/react';
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("mqkrnvre");
@@ -25,8 +25,10 @@ const Contact = () => {
     }));
   };
 
+  const badgeBgColor = useColorModeValue('gray.100', 'gray.800');
+
   return (
-    <Box as="section" w="full" py={[12, 24, 32]} borderTop="1px solid" borderColor="gray.200" id="contact">
+    <Box as="section" w="full" py={[12, 24, 32]} borderTop="1px solid" borderColor="gray.200" id="contact" bg={badgeBgColor}>
       <Container px={[4, 6]} maxW="container.lg">
         <Flex flexDir="column" alignItems="center" justifyContent="center" textAlign="center">
           <Box>
@@ -39,15 +41,15 @@ const Contact = () => {
             <Flex flexDir="column">
               <Box mb={4}>
                 <label htmlFor="email">Email</label>
-                <Input id="email" placeholder="Enter your email" type="email" name="email" value={formValues.email} onChange={handleChange} required />
+                <Input bg="white" id="email" placeholder="Enter your email" type="email" name="email" value={formValues.email} onChange={handleChange} required />
                 <ValidationError prefix="Email" field="email" errors={state.errors} />
               </Box>
               <Box mb={4}>
                 <label htmlFor="message">Message</label>
-                <Textarea id="message" placeholder="Enter your message" minH="100px" name="message" value={formValues.message} onChange={handleChange} required />
+                <Textarea bg="white" id="message" placeholder="Enter your message" minH="100px" name="message" value={formValues.message} onChange={handleChange} required />
                 <ValidationError prefix="Message" field="message" errors={state.errors} />
               </Box>
-              <Button type="submit" disabled={state.submitting}>Send Message</Button>
+              <Button type="submit" disabled={state.submitting} colorScheme="blue" variant="outline">Send Message</Button>
             </Flex>
           </Box>
           <AlertDialog leastDestructiveRef={leastDestructiveRef} isOpen={isOpen} onClose={onClose}>

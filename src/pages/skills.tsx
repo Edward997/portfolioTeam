@@ -251,12 +251,13 @@ const SkillsSection = () => {
                         <Heading as="h3" fontSize="xl" mb={4}>
                             Tools
                         </Heading>
-                        <Flex justifyContent="center">
+                        <Flex flexWrap="wrap" justifyContent="center">
                             <Tooltip label="Git">
                                 <img
                                     src={iconGit}
                                     alt="Git Icon"
                                     className="icono-html"
+                                    style={{ margin: '5px' }}
                                 />
                             </Tooltip>
                             <Tooltip label="GitHub">
@@ -264,6 +265,7 @@ const SkillsSection = () => {
                                     src={iconGithub}
                                     alt="GitHub Icon"
                                     className="icono-html"
+                                    style={{ margin: '5px' }}
                                 />
                             </Tooltip>
                             <Tooltip label="Figma">
@@ -271,6 +273,7 @@ const SkillsSection = () => {
                                     src={iconFigma}
                                     alt="Figma Icon"
                                     className="icono-html"
+                                    style={{ margin: '5px' }}
                                 />
                             </Tooltip>
                             <Tooltip label="Godot Engine">
@@ -278,6 +281,7 @@ const SkillsSection = () => {
                                     src={iconGodot}
                                     alt="Godot Eengine Icon"
                                     className="icono-html"
+                                    style={{ margin: '5px' }}
                                 />
                             </Tooltip>
                             <Tooltip label="Visual Studio Code">
@@ -285,6 +289,7 @@ const SkillsSection = () => {
                                     src={iconVsCode}
                                     alt="Visual Studio Code Icon"
                                     className="icono-html"
+                                    style={{ margin: '5px' }}
                                 />
                             </Tooltip>
                             <Tooltip label="Visual Studio Professional">
@@ -292,6 +297,7 @@ const SkillsSection = () => {
                                     src={iconVsStudio}
                                     alt="Visual Studio Professional Icon"
                                     className="icono-html"
+                                    style={{ margin: '5px' }}
                                 />
                             </Tooltip>
                             <Tooltip label="Sublime Text">
@@ -299,6 +305,7 @@ const SkillsSection = () => {
                                     src={iconSublime}
                                     alt="Sublime Text Icon"
                                     className="icono-html"
+                                    style={{ margin: '5px' }}
                                 />
                             </Tooltip>
                             <Tooltip label="Intellijidea">
@@ -306,6 +313,7 @@ const SkillsSection = () => {
                                     src={iconIntelliji}
                                     alt="Intellijidea Icon"
                                     className="icono-html"
+                                    style={{ margin: '5px' }}
                                 />
                             </Tooltip>
                             <Tooltip label="Pycharm">
@@ -313,6 +321,7 @@ const SkillsSection = () => {
                                     src={iconPyCharm}
                                     alt="Pycharm Icon"
                                     className="icono-html"
+                                    style={{ margin: '5px' }}
                                 />
                             </Tooltip>
                             

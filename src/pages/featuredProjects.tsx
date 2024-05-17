@@ -31,6 +31,7 @@ import DDCM1 from '../assets/images/uxUiDesign/DDC/DDCM1.png';
 import DDCM2 from '../assets/images/uxUiDesign/DDC/DDCM2.png';
 import DDCM3 from '../assets/images/uxUiDesign/DDC/DDCM3.png';
 import DDCM4 from '../assets/images/uxUiDesign/DDC/DDCM4.png';
+import BackButton from '../components/backButton';
 
 
 
@@ -283,9 +284,9 @@ const projects: ProjectCategory[] = [
         title: "Digital Document Center",
         description:
           <p>
-            This is a mockup project where the interaction <b style={{ color: "green" }}>design</b> between the platform 
-            and the user is made for a <b style={{ color: "green" }}>module</b> that was integrated into a company's system. 
-            This module consists in the design of views for an internal <b style={{ color: "green" }}>file manager </b> 
+            This is a mockup project where the interaction <b style={{ color: "green" }}>design</b> between the platform
+            and the user is made for a <b style={{ color: "green" }}>module</b> that was integrated into a company's system.
+            This module consists in the design of views for an internal <b style={{ color: "green" }}>file manager </b>
             "Digital Document Center" designed in <b style={{ color: "green" }}>Figma</b>.
           </p>
         ,
@@ -293,7 +294,7 @@ const projects: ProjectCategory[] = [
         youtubeLink: "",
         githubLink: "",
         githubPagesLink: "",
-        images: [DDC1,DDC2,DDC3,DDC4,DDC5,DDC6,DDCM1,DDCM2,DDCM3,DDCM4],
+        images: [DDC1, DDC2, DDC3, DDC4, DDC5, DDC6, DDCM1, DDCM2, DDCM3, DDCM4],
       },
     ]
   }
@@ -312,7 +313,7 @@ const FeaturedProjects = () => {
     setCurrentImages([]);
     onClose(); // Cierra el modal cuando se llama a esta función
   };
-  
+
   const projectWithId12 = projects.find(project => project.items.some(item => item.id === 12));
 
   const images = projectWithId12 ? projectWithId12.items[0].images : [];
@@ -320,6 +321,7 @@ const FeaturedProjects = () => {
   return (
     <ChakraProvider>
       <Box bg="#F1FAEE" w="100%">
+        <BackButton />
         <Container maxW="container.xl" py={12}>
           <Box textAlign="center" mb={12}>
             <Heading as="h2" mb={4} fontSize="3xl" fontWeight="bold">
@@ -439,11 +441,11 @@ const FeaturedProjects = () => {
                                 </Link>
                               )}
                               {category.category === 'UX/UI Design' && (
-                                  <Button onClick={() => handleOpenModal(project.images || [])}>
-                                    Open Gallery
-                                  </Button>
+                                <Button onClick={() => handleOpenModal(project.images || [])}>
+                                  Open Gallery
+                                </Button>
 
-                                )}
+                              )}
                             </Box>
                           </Box>
                         </Box>
@@ -461,7 +463,7 @@ const FeaturedProjects = () => {
               <ModalHeader textAlign="center">Image Gallery</ModalHeader>
               <ModalBody>
                 <Box position="relative" width="full" overflow="hidden">
-                {images && images.length > 0 && <ImageCarousel images={images} />}
+                  {images && images.length > 0 && <ImageCarousel images={images} />}
                 </Box>
               </ModalBody>
               <ModalFooter>

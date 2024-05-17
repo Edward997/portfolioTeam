@@ -1,18 +1,19 @@
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
-import homePage from './pages/homePage';
+import HomePage from './pages/homePage';
 import FeaturedProjects from './pages/featuredProjects';
-
 
 function App() {
   return (
     <ChakraProvider>
-      <Routes>
-        <Route path="/portfolioTeam/" Component={homePage} />
-        <Route path="/portfolioTeam/featuredProjects" Component={FeaturedProjects} />
-      </Routes>
+      <Router basename={process.env.PUBLIC_URL}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/featuredProjects" element={<FeaturedProjects />} />
+        </Routes>
+      </Router>
     </ChakraProvider>
-);
+  );
 }
 
 export default App;

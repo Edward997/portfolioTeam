@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight, FaGithub, FaYoutube } from 'react-icons/fa';
 import { ChakraProvider, Box, Container, Heading, SimpleGrid, Link, IconButton, Button, Tab, TabList, TabPanel, TabPanels, Tabs, useDisclosure, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useBreakpointValue, } from '@chakra-ui/react';
 import { Text } from "@chakra-ui/react";
+import ImageCarousel from "../components/imageCarousel";
 import '../App.css'
 
 //Impor images
@@ -16,8 +17,20 @@ import schoolManagement from '../assets/images/schoolProjects/schoolManagmentSys
 import musicPlayer from '../assets/images/schoolProjects/musicPlayer.png';
 import pathFinder from '../assets/images/personalProjects/pathFinderVisualizer.png';
 import sortVisualizer from '../assets/images/personalProjects/sortVisualizer.png';
-import uxuiDesign from '../assets/images/uxUiDesign/uxuiDesing.png';
+import uxuiDesign from '../assets/images/uxUiDesign/uxuiDesign.png';
 import Footer from '../components/footer';
+
+//UXUI imges DDC
+import DDC1 from '../assets/images/uxUiDesign/DDC/DDC1.png';
+import DDC2 from '../assets/images/uxUiDesign/DDC/DDC2.png';
+import DDC3 from '../assets/images/uxUiDesign/DDC/DDC3.png';
+import DDC4 from '../assets/images/uxUiDesign/DDC/DDC4.png';
+import DDC5 from '../assets/images/uxUiDesign/DDC/DDC5.png';
+import DDC6 from '../assets/images/uxUiDesign/DDC/DDC6.png';
+import DDCM1 from '../assets/images/uxUiDesign/DDC/DDCM1.png';
+import DDCM2 from '../assets/images/uxUiDesign/DDC/DDCM2.png';
+import DDCM3 from '../assets/images/uxUiDesign/DDC/DDCM3.png';
+import DDCM4 from '../assets/images/uxUiDesign/DDC/DDCM4.png';
 
 
 
@@ -280,7 +293,7 @@ const projects: ProjectCategory[] = [
         youtubeLink: "",
         githubLink: "",
         githubPagesLink: "",
-        images: [guionInstruccional, schoolManagement],
+        images: [DDC1,DDC2,DDC3,DDC4,DDC5,DDC6,DDCM1,DDCM2,DDCM3,DDCM4],
       },
     ]
   }
@@ -289,17 +302,6 @@ const projects: ProjectCategory[] = [
 const FeaturedProjects = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [currentImages, setCurrentImages] = useState<string[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? totalImages - 1 : prevIndex - 1));
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === totalImages - 1 ? 0 : prevIndex + 1));
-  };
-
-  const arrowSize = useBreakpointValue({ base: 'md', md: 'lg' });
 
   const handleOpenModal = (images: string[]) => {
     setCurrentImages(images);
@@ -310,9 +312,10 @@ const FeaturedProjects = () => {
     setCurrentImages([]);
     onClose(); // Cierra el modal cuando se llama a esta función
   };
-  const totalImages = currentImages.length;
+  
+  const projectWithId12 = projects.find(project => project.items.some(item => item.id === 12));
 
-  const height = useBreakpointValue({ base: '300px', md: '400px' });
+  const images = projectWithId12 ? projectWithId12.items[0].images : [];
 
   return (
     <ChakraProvider>
@@ -328,7 +331,7 @@ const FeaturedProjects = () => {
 
           </Box>
           {/* Pestañas para diferentes categorías */}
-          <Tabs isFitted variant="enclosed-colored" colorScheme="teal" defaultIndex={0} >
+          <Tabs isFitted variant="soft-rounded" colorScheme="green" defaultIndex={0} >
             <TabList mb="1em"
               overflowX={["auto", "visible"]}
               flexWrap={["nowrap", "wrap"]}>
@@ -379,7 +382,7 @@ const FeaturedProjects = () => {
                                 )}
                                 {category.category === 'UX/UI Design' && (
                                   <Button onClick={() => handleOpenModal(project.images || [])}>
-                                    Open Modal
+                                    Open Gallery
                                   </Button>
 
                                 )}
@@ -435,6 +438,12 @@ const FeaturedProjects = () => {
                                   </IconButton>
                                 </Link>
                               )}
+                              {category.category === 'UX/UI Design' && (
+                                  <Button onClick={() => handleOpenModal(project.images || [])}>
+                                    Open Gallery
+                                  </Button>
+
+                                )}
                             </Box>
                           </Box>
                         </Box>
@@ -446,39 +455,13 @@ const FeaturedProjects = () => {
             </TabPanels>
           </Tabs>
           {/* Modal */}
-          <Modal isOpen={isOpen} onClose={handleCloseModal} size="xl">
+          <Modal isOpen={isOpen} onClose={handleCloseModal} size="2xl">
             <ModalOverlay />
             <ModalContent>
               <ModalHeader textAlign="center">Image Gallery</ModalHeader>
               <ModalBody>
                 <Box position="relative" width="full" overflow="hidden">
-                  <img
-                    src={currentImages[currentIndex]}
-                    alt={`Slide ${currentIndex}`}
-                    width="full"
-                    height={height}
-                    style={{ objectFit: 'cover' }}
-                  />
-                  <IconButton
-                    aria-label="Previous Slide"
-                    icon={<FaArrowLeft />}
-                    size={arrowSize}
-                    position="absolute"
-                    top="50%"
-                    left="10px"
-                    transform="translateY(-50%)"
-                    onClick={prevSlide}
-                  />
-                  <IconButton
-                    aria-label="Next Slide"
-                    icon={<FaArrowRight />}
-                    size={arrowSize}
-                    position="absolute"
-                    top="50%"
-                    right="10px"
-                    transform="translateY(-50%)"
-                    onClick={nextSlide}
-                  />
+                {images && images.length > 0 && <ImageCarousel images={images} />}
                 </Box>
               </ModalBody>
               <ModalFooter>

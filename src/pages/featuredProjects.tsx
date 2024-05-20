@@ -32,6 +32,7 @@ import DDCM2 from '../assets/images/uxUiDesign/DDC/DDCM2.png';
 import DDCM3 from '../assets/images/uxUiDesign/DDC/DDCM3.png';
 import DDCM4 from '../assets/images/uxUiDesign/DDC/DDCM4.png';
 import BackButton from '../components/backButton';
+import Navbar from '../components/navbar';
 
 
 
@@ -321,6 +322,7 @@ const FeaturedProjects = () => {
   return (
     <ChakraProvider>
       <Box bg="#F1FAEE" w="100%">
+        <Navbar/>
         <BackButton />
         <Container maxW="container.xl" py={12}>
           <Box textAlign="center" mb={12}>

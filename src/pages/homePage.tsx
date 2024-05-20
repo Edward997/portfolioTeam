@@ -1,5 +1,7 @@
 import React from 'react';
-import { Box, Heading, Text, Button, ChakraProvider, Container, Link, SimpleGrid, IconButton, Flex, AvatarGroup, Avatar, AvatarBadge } from '@chakra-ui/react'; // Importa componentes de Chakra UI según sea necesario
+import { Box, Heading, Text, Button, ChakraProvider, Container, Link as ChakraLink, SimpleGrid, IconButton, Flex, AvatarGroup, Avatar, AvatarBadge } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
+
 import Banner from '../components/banner';
 import Footer from '../components/footer';
 import { FaGithub, FaYoutube } from "react-icons/fa"
@@ -157,21 +159,21 @@ const HomePage: React.FC = () => {
 
                                         <Box px={6} py={4} display="flex" justifyContent="center" alignItems="center" gap={2}>
                                             {project.youtubeLink && (
-                                                <Link href={project.youtubeLink} target="_blank" rel="noopener noreferrer">
+                                                <ChakraLink href={project.youtubeLink} target="_blank" rel="noopener noreferrer">
                                                     <IconButton aria-label={''} icon={<FaYoutube />} colorScheme='red'>
                                                     </IconButton>
-                                                </Link>
+                                                </ChakraLink>
                                             )}
                                             {project.githubLink && (
-                                                <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                                                <ChakraLink href={project.githubLink} target="_blank" rel="noopener noreferrer">
                                                     <IconButton aria-label={''} icon={<FaGithub />} colorScheme='gray'>
                                                     </IconButton>
-                                                </Link>
+                                                </ChakraLink>
                                             )}
                                             {project.githubPagesLink && (
-                                                <Link href={project.githubPagesLink} target="_blank" rel="noopener noreferrer">
+                                                <ChakraLink href={project.githubPagesLink} target="_blank" rel="noopener noreferrer">
                                                     <Button colorScheme="teal" size="sm" mr={2}>GitHub Pages</Button>
-                                                </Link>
+                                                </ChakraLink>
                                             )}
                                         </Box>
                                     </Box>
@@ -180,11 +182,11 @@ const HomePage: React.FC = () => {
                         </SimpleGrid>
                         {/* Botón para ver todos los proyectos */}
                         <Box mt={8} textAlign="center">
-                            <Link href="/portfolioTeam/featuredProjects">
+                            <ChakraLink as={RouterLink} to="/featuredProjects">
                                 <Button variant="outline" colorScheme="gray" size="lg">
                                     View All
                                 </Button>
-                            </Link>
+                            </ChakraLink>
                         </Box>
                     </Container>
                 </Box>

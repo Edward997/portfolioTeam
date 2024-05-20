@@ -1,4 +1,5 @@
-import { Flex, Heading, Text, Link, Box } from "@chakra-ui/react";
+import { Link as RouterLink } from 'react-router-dom';
+import { Flex, Heading, Text, Box, Link as ChakraLink } from '@chakra-ui/react';
 import Navbar from "./navbar";
 
 interface BannerProps { }
@@ -39,8 +40,9 @@ const Banner: React.FC<BannerProps> = () => {
           Experienced full-stack developer with a passion for crafting beautiful and functional web and desktop applications.
         </Text>
         <Flex gap={4}>
-          <Link
-            href="/portfolioTeam/featuredProjects"
+          <ChakraLink
+            as={RouterLink}
+            to="/featuredProjects"
             fontSize="sm"
             fontWeight="medium"
             bg="#1D3557"
@@ -51,8 +53,8 @@ const Banner: React.FC<BannerProps> = () => {
             _hover={{ bg: '#1D3557', opacity: 0.9 }}
           >
             View Projects
-          </Link>
-          <Link
+          </ChakraLink>
+          <ChakraLink
             href="#contact"
             fontSize="md"
             fontWeight="medium"
@@ -65,7 +67,7 @@ const Banner: React.FC<BannerProps> = () => {
             _hover={{ bg: '#1D3557', opacity: 0.9, color: 'gray.50' }}
           >
             Contact Us
-          </Link>
+          </ChakraLink>
         </Flex>
       </Flex>
     </Flex>
